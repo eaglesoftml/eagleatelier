@@ -1,0 +1,64 @@
+<odoo>
+    <template id="assets_backend" name="atelier assets" inherit_id="web.assets_backend">
+         <xpath expr="." position="inside">
+             <link rel="stylesheet" href="/atelier/static/src/css/style.css"/>
+         </xpath>
+    </template>
+    <record model="ir.ui.view" id="client_form_view" >
+        <field name="name">atelier.client</field>
+        <field name="model">res.partner</field>
+        <field eval="1" name="priority"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+<!--               <xpath expr="//field[@name='website']" position="after">-->
+                   <notebook >
+                       <page string="Atelier">
+<!--                           class="cont" style="display:flex;flex-direction:column;justify-content:space-between;"-->
+                           <group class="cnt">
+                               <group class="elt">
+                                   <field class="chp" name="sexe"/>
+                                   <field  class="chp" name="dos"/>
+                                  <field class="chp" name="epaule"/>
+                                  <field class="chp" name="epaulemache"/>
+                                   <field class="chp" name="poitrine"/>
+                                   <field class="chp" name="taille"/>
+                               </group>
+                                <group class="elt">
+
+                                    <field class="chp" name="ceinture"/>
+                                    <field class="chp" name="longpantalon"/>
+                                    <field class="chp" name="longrobe"/>
+                                   <field class="chp" name="longjup"/>
+                                    <field class="chp" name="bas"/><br/>
+                                     <field class="chp" name="manche"/>
+                               </group>
+                               <group>
+                                   <field class="chp" name="longs"/>
+                                   <field class="chp" name="longt"/>
+                                    <field class="chp" name="cuisse"/>
+                                    <field class="chp" name="model"/>
+                                   <field class="chp" name="longhaut"/>
+                               </group>
+                           </group>
+                       </page>
+                   </notebook>
+<!--               </xpath>-->
+        </field>
+    </record>
+
+<!--     <record model="ir.ui.view" id="client_tree_view" >-->
+<!--        <field name="name">atelier.client</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="type">tree</field>-->
+<!--        <field eval="7" name="priority"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="atelier">-->
+<!--                <field name="dos"/>-->
+<!--                <field name="epaule"/>-->
+<!--                <field name="epaulemache"/>-->
+<!--                <field name="poitrine"/>-->
+<!--                <field name="taille"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

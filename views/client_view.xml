@@ -10,39 +10,42 @@
         <field eval="1" name="priority"/>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-<!--               <xpath expr="//field[@name='website']" position="after">-->
+               <xpath expr="//field[@name='website']" position="after">
+                   <field class="chp" name="sexe"/>
+               </xpath>
                    <notebook >
-                       <page string="Atelier">
+                       <page string="Mensuration">
 <!--                           class="cont" style="display:flex;flex-direction:column;justify-content:space-between;"-->
-                           <group class="cnt">
-                               <group class="elt">
-                                   <field class="chp" name="sexe"/>
-                                   <field  class="chp" name="dos"/>
-                                  <field class="chp" name="epaule"/>
-                                  <field class="chp" name="epaulemache"/>
-                                   <field class="chp" name="poitrine"/>
-                                   <field class="chp" name="taille"/>
-                               </group>
-                                <group class="elt">
+                           <group  name="masculin" attrs="{'invisible':[('sexe','!=','masculin')]}">
+                               <group class="cnt">
+                                   <group class="elt">
+                                       <field  class="chp" name="dos"/>
+                                      <field class="chp" name="epaule"/>
+                                      <field class="chp" name="epaulemache"/>
+                                       <field class="chp" name="poitrine"/>
+                                       <field class="chp" name="taille"/>
+                                   </group>
+                                    <group class="elt">
 
-                                    <field class="chp" name="ceinture"/>
-                                    <field class="chp" name="longpantalon"/>
-                                    <field class="chp" name="longrobe"/>
-                                   <field class="chp" name="longjup"/>
-                                    <field class="chp" name="bas"/><br/>
-                                     <field class="chp" name="manche"/>
-                               </group>
-                               <group>
-                                   <field class="chp" name="longs"/>
-                                   <field class="chp" name="longt"/>
-                                    <field class="chp" name="cuisse"/>
-                                    <field class="chp" name="model"/>
-                                   <field class="chp" name="longhaut"/>
+                                        <field class="chp" name="ceinture"/>
+                                        <field class="chp" name="longpantalon"/>
+                                        <field class="chp" name="longrobe"/>
+                                       <field class="chp" name="longjup"/>
+                                        <field class="chp" name="bas"/><br/>
+                                         <field class="chp" name="manche"/>
+                                   </group>
+                                   <group>
+                                       <field class="chp" name="longs"/>
+                                       <field class="chp" name="longt"/>
+                                        <field class="chp" name="cuisse"/>
+                                        <field class="chp" name="model"/>
+                                       <field class="chp" name="longhaut"/>
+                                   </group>
                                </group>
                            </group>
                        </page>
+
                    </notebook>
-<!--               </xpath>-->
         </field>
     </record>
 

@@ -28,4 +28,4 @@ class client(models.Model):
     longrobe = fields.Float("Long.Robe")
     longjup = fields.Float("Long.Jube")
 
-    sexe = fields.Selection(selection=[('masculin', 'Masculin'), ('feminin', 'Feminin')],default="feminin")
+    sexe = fields.Selection(selection=[('masculin', 'Masculin'), ('feminin', 'Feminin')], required=True)

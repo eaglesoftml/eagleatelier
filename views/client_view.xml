@@ -1,9 +1,9 @@
 <odoo>
-    <template id="assets_backend" name="atelier assets" inherit_id="web.assets_backend">
-         <xpath expr="." position="inside">
-             <link rel="stylesheet" href="/atelier/static/src/css/style.css"/>
-         </xpath>
-    </template>
+<!--    <template id="assets_backend" name="atelier assets" inherit_id="web.assets_backend">-->
+<!--         <xpath expr="." position="inside">-->
+<!--             <link rel="stylesheet" href="/atelier/static/src/css/style.css"/>-->
+<!--         </xpath>-->
+<!--    </template>-->
     <record model="ir.ui.view" id="client_form_view" >
         <field name="name">atelier.client</field>
         <field name="model">res.partner</field>

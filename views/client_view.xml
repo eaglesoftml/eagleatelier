@@ -11,40 +11,44 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
                <xpath expr="//field[@name='website']" position="after">
-                   <field class="chp" name="sexe"/>
+                   <field name="sexe"/>
                </xpath>
-                   <notebook >
+                   <notebook>
                        <page string="Mensuration">
 <!--                           class="cont" style="display:flex;flex-direction:column;justify-content:space-between;"-->
+                           <group name="feminin" attrs="{'invisible':[('sexe','==','feminin' '' 'masculin')]}">
+                               <group>
+                                 <field  name="dos"/>
+                                      <field  name="epaule"/>
+                                      <field  name="epaulemache"/>
+                                      <field  name="poitrine"/>
+                                      <field  name="ceinture"/>
+                               </group>
+                               <group>
+                                        <field name="longpantalon"/>
+                                        <field name="longs"/>
+                                        <field name="longt"/>
+                                        <field name="cuisse"/>
+                                        <field name="model"/>
+                               </group>
+                           </group>
+                           <group  name="feminin" attrs="{'invisible':[('sexe','!=','feminin')]}">
+                               <group class="elt">
+                                   <field name="taille"/>
+                                   <field name="longrobe"/>
+                                   <field name="longjup"/>
+                                   <field name="longhaut"/>
+                                   <field  name="manche"/>
+                                   <field name="bas"/>
+                               </group>
+                           </group>
                            <group  name="masculin" attrs="{'invisible':[('sexe','!=','masculin')]}">
-                               <group class="cnt">
-                                   <group class="elt">
-                                       <field  class="chp" name="dos"/>
-                                      <field class="chp" name="epaule"/>
-                                      <field class="chp" name="epaulemache"/>
-                                       <field class="chp" name="poitrine"/>
-                                       <field class="chp" name="taille"/>
-                                   </group>
-                                    <group class="elt">
-
-                                        <field class="chp" name="ceinture"/>
-                                        <field class="chp" name="longpantalon"/>
-                                        <field class="chp" name="longrobe"/>
-                                       <field class="chp" name="longjup"/>
-                                        <field class="chp" name="bas"/><br/>
-                                         <field class="chp" name="manche"/>
-                                   </group>
-                                   <group>
-                                       <field class="chp" name="longs"/>
-                                       <field class="chp" name="longt"/>
-                                        <field class="chp" name="cuisse"/>
-                                        <field class="chp" name="model"/>
-                                       <field class="chp" name="longhaut"/>
-                                   </group>
+                                <group>
+                                   <field name="coup"/>
+                                   <field name="patte"/>
                                </group>
                            </group>
                        </page>
-
                    </notebook>
         </field>
     </record>
